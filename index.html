@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        function sendMessage(){
+            let message = document.getElementById("userInput").value.toLowerCase();
+
+            let response = "";
+            if (message.includes("fees")){
+                response = "School fees are N150,000 per session.";
+            } 
+            else if(message.includes("resumption")){
+                response = "School resumes on September 18.";
+            }
+            else {
+                response = "Please contact the school office.";
+            }
+
+            document.getElementById("reply").innerHTML= response;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to our school chatbot</h1>
+    <input id="userInput" type="text" placeholder="Ask a question">
+    <button onclick="sendMessage()">Send</button>
+    <p id="reply"></p>
+</body>
+</html>
